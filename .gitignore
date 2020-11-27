@@ -114,4 +114,5 @@ dist
 .vscode-test
 
 botconfig.json
+profile.json
 # End of https://www.toptal.com/developers/gitignore/api/node
