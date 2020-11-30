@@ -51,12 +51,11 @@ const rainbowRole = (msg) => {
 }
 
 
-
 bot.on('message', async msg => {
     if (msg.author.bot) return;
     if (msg.channel.type == 'dm') return;
 
-    usersLvl(msg);
+    usersLvl.onMessage(msg);
 
     let user = msg.author.username;
     let userId = msg.author.id;

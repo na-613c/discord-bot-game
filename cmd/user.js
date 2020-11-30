@@ -7,17 +7,16 @@ module.exports.run = async (bot, msg, args) => {
 
     const user = msg.mentions.users.first();
     let u = profile[user.id];
-
     let rainbowRole = (u.endTime > Date.now()) ? msToTime(u.endTime - Date.now()) : 'нет';
-
     let embed = new Discord.MessageEmbed()
-        .setTitle('ИНФОРМАЦИЯ О ПОЛЬЗОВАТЕЛЕ')
+        .setTitle('Посмотреть информацию о пользователе')
         .setColor('42aaff')
-        .addField('Имя', user.username)
         .addField('Тэг', user.tag)
-        .addField('Дескриминатор', user.discriminator)
-        .addField('Уровень', u.lvl)
-        .addField('Радужная Роль ', rainbowRole)
+        .addField('ID:', user.id)
+        .addField('Имя', user.username, true)
+        .addField('Дескриминатор', user.discriminator, true)
+        .addField('Уровень', `:medal: ${u.lvl}`)
+        .addField('Радужная Роль ', ':alarm_clock: ' + rainbowRole)
         .setThumbnail(user.displayAvatarURL())
 
     msg.channel.send(embed);
