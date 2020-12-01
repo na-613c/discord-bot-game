@@ -1,8 +1,8 @@
 const Discord = require("discord.js");
 const start = "⏳";
-let usersLvl = require('../usersLvl')
-let profile = require('../profile.json')
-let c = require('../constants.js')
+let usersLvl = require('../profile/usersLvl')
+let profile = require('../profile/profile.json')
+let c = require('../data/constants.js')
 
 
 exports.run = async (bot, msg, args) => {

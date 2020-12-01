@@ -1,5 +1,5 @@
 let profile = require('./profile.json')
-let c = require('./constants.js')
+let c = require('../data/constants.js')
 
 const fs = require('fs');
 const Discord = module.require('discord.js');

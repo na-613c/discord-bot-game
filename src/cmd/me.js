@@ -1,5 +1,5 @@
 const Discord = module.require('discord.js');
-let profile = require('../profile.json')
+let profile = require('../profile/profile.json')
 const msToTime = module.require('./help/dateTime.js');
 
 

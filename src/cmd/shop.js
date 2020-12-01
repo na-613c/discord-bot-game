@@ -1,7 +1,7 @@
 const Discord = module.require('discord.js');
-let profile = require('../profile.json')
-let usersLvl = require('./../usersLvl')
-let c = require('../constants.js')
+let profile = require('../profile/profile.json')
+let usersLvl = require('./../profile/usersLvl')
+let c = require('../data/constants.js')
 
 
 module.exports.run = async (bot, msg, args) => {
