@@ -1,7 +1,7 @@
 const Discord = require("discord.js");
 const start = "⏳";
-let usersLvl = require('../profile/usersLvl')
-let profile = require('../profile/profile.json')
+let usersLvl = require('../common/usersLvl')
+let profile = require('../data/profile.json')
 let c = require('../data/constants.js')
 
 

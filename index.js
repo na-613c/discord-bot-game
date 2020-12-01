@@ -1,13 +1,14 @@
 const Discord = require('discord.js');
 const fs = require('fs');
 let config = require('./botconfig.json');
-let usersLvl = require('./src/profile/usersLvl')
-let rules = require('./src/other/rules')
-let rainbowRole = require('./src/other/rainbowRole')
+let usersLvl = require('./src/common/usersLvl')
+let rules = require('./src/common/rules')
+let rainbowRole = require('./src/common/rainbowRole')
 
 
 const bot = new Discord.Client();
 bot.comands = new Discord.Collection();
+bot.hidecomands = new Discord.Collection();
 let token = config.token;
 let prefix = config.prefix;
 
@@ -26,6 +27,23 @@ fs.readdir('./src/cmd/', (err, files) => {
         let props = require(`./src/cmd/${f}`);
         console.log(`${i + 1}.${f} загружено`);
         bot.comands.set(props.help.name, props);
+    })
+
+})
+
+fs.readdir('./src/hidecmd/', (err, files) => {
+    if (err) console.log(err);
+
+    let jsFile = files.filter(f => f.split('.').pop() === 'js');
+
+    if (jsFile.length <= 0) console.log("No comands")
+
+    console.log(`загружено hidecmd ${jsFile.length} команд`)
+
+    jsFile.forEach((f, i) => {
+        let props = require(`./src/hidecmd/${f}`);
+        console.log(`${i + 1}.${f} загружено`);
+        bot.hidecomands.set(props.help.name, props);
     })
 
 })
@@ -64,8 +82,9 @@ bot.on('message', async msg => {
     }
 
     if (!msg.content.startsWith(prefix)) return;
+    let arrayComands = bot.comands.concat(bot.hidecomands)
+    let cmd = arrayComands.get(comand.slice(prefix.length))
 
-    let cmd = bot.comands.get(comand.slice(prefix.length))
     if (cmd) cmd.run(bot, msg, args);
 
 

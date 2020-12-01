@@ -1,15 +1,15 @@
-let profile = require('./profile.json')
+let profile = require('../data/profile.json')
 let c = require('../data/constants.js')
-
 const fs = require('fs');
 const Discord = module.require('discord.js');
 
 
-const writeInProfile = (profile) => {
-    fs.writeFile('profile.json', JSON.stringify(profile), err => {
-        if (err) console.log(err)
+const writeInProfile = (profileData) => {
+    fs.writeFile('./src/data/profile.json', JSON.stringify(profileData), err => {
+        if (err) console.log("ERROR___",err)
     })
 }
+
 const addRole = (u, msg) => {
     const role = msg.guild.roles.cache.find(role => role.name === "RainbowRole");
 

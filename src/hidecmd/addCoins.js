@@ -1,7 +1,6 @@
 const Discord = require("discord.js");
-let usersLvl = require('../profile/usersLvl')
-let profile = require('../profile/profile.json')
-let c = require('../data/constants.js')
+let usersLvl = require('../common/usersLvl')
+
 
 
 exports.run = async (bot, msg, args) => {
@@ -15,7 +14,7 @@ exports.run = async (bot, msg, args) => {
     } else {
         let embed = new Discord.MessageEmbed().setColor('42aaff').setTitle('У Вас нет прав для данной операции.');
         msg.channel.send(embed);
-        msg.author.send('Покараю :З')
+        msg.author.send('Накожу :З')
     }
 };
 
