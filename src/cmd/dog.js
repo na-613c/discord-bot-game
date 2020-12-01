@@ -1,4 +1,4 @@
-const messageRecieved = require('./help/api');
+const messageRecieved = require('../help/api');
 
 
 module.exports.run = async (bot, msg, args) => {

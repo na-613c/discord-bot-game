@@ -1,6 +1,6 @@
 const Discord = module.require('discord.js');
 let profile = require('../data/profile.json')
-const msToTime = module.require('./help/dateTime.js');
+const msToTime = module.require('../help/dateTime.js');
 
 
 module.exports.run = async (bot, msg, args) => {
