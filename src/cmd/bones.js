@@ -49,7 +49,7 @@ exports.run = async (bot, msg, args) => {
             usersLvl.addCoins(reactionArr[1].id, 0 - c.tota)
 
             const add = c.tota * 2
-            
+
             let resultArr = (score1 > score2) ? reactionArr : [reactionArr[1], reactionArr[0]]
 
             usersLvl.addCoins(resultArr[0].id, add)
@@ -59,8 +59,8 @@ exports.run = async (bot, msg, args) => {
                 .setTitle(`Резльтаты игры`)
                 .addField(`${reactionArr[0].username}`, `выбрасывает ${score1}`)
                 .addField(`${reactionArr[1].username}`, `выбрасывает ${score2}`)
-                .addField('Выиграл', `${resultArr[0].username} получает ${c.tota}🪙`)
-                .addField('Проиграл', `${resultArr[1].username} теряет ${c.tota}🪙`)
+                .addField('Выиграл', `${resultArr[0].username} получает ${c.tota} 🪙`)
+                .addField('Проиграл', `${resultArr[1].username} теряет ${c.tota} 🪙`)
 
             msg.channel.send(winnerMsg);
         }
@@ -71,6 +71,6 @@ exports.run = async (bot, msg, args) => {
 
 exports.help = {
     name: 'bones',
-    description: `Тратьте свои 🪙 играя в кости. `,
+    description: `Тратьте свои 🪙 играя в кости с другом. `,
     usage: 'bones'
 };
