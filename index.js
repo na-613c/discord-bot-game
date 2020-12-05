@@ -31,6 +31,7 @@ fs.readdir('./src/cmd/', (err, files) => {
 
 })
 
+
 fs.readdir('./src/hidecmd/', (err, files) => {
     if (err) console.log(err);
 
@@ -86,8 +87,10 @@ bot.on('message', async msg => {
     let cmd = arrayComands.get(comand.slice(prefix.length))
 
     if (cmd) cmd.run(bot, msg, args);
-
-
 });
 
+
 bot.login(token);
+
+
+

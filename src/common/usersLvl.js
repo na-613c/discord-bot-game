@@ -44,10 +44,10 @@ const usersLvl = {
 
         if (!profile[uid]) {
             profile[uid] = {
-                coins: 10,
+                coins: 3000,
                 endTime: 0,
                 xp: 0,
-                lvl: 0,
+                lvl: 6,
             };
         }
         let u = profile[uid];
