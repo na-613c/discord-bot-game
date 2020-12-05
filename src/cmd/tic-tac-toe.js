@@ -70,7 +70,11 @@ exports.run = async (bot, msg, args) => {
         .addField('Правила:', `Данно поле и номера для хода \n${getTable(arrInfo)}`)
 
     const times = await msg.channel.send(embed);
-    await arrReaction.forEach(e => times.react(e))
+    try {
+        await arrReaction.forEach(e => times.react(e))
+    } catch (e){
+        console.log(e)
+    }
 
     let deletmsg = times;
 
